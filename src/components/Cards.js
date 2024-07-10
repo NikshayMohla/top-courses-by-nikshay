@@ -1,4 +1,6 @@
 import React from 'react';
+import Card from './Card';
+
 
 const Cards = ({ courses }) => {
   let allCourses = [];
@@ -13,7 +15,10 @@ const Cards = ({ courses }) => {
 
   return (
     <div>
-
+      {!courses ? (<div><p>NoDATA</p></div>) : (getCourse().map((course) => {
+        return <Card key={course.id} course={course} />
+      }))
+      }
     </div>
   );
 };
